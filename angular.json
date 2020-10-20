@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "WebsiteBanGiay"
+    }
+  },
+  "defaultProject": "WebsiteBanGiay",
+  "cli": {
+    "analytics": "ad833623-0d19-4fa7-9fb0-23a42bdea456"
+  }
 }
