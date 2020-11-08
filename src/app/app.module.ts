@@ -10,6 +10,14 @@ import { SlideComponent } from './slide/slide.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { CateogoryComponent } from './product/cateogory/catemain/cateogory.component';
+import { DetailproComponent } from './detailpro/detailpro.component';
+import { CaterightComponent } from './product/cateogory/cateright/cateright.component';
+import { CateleftComponent } from './product/cateogory/cateleft/cateleft.component';
+
+
+
 // import { from } from 'rxjs';
 
 
@@ -22,6 +30,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NewsComponent,
     SlideComponent,
     MainComponent,
+    CartComponent,
+    CateogoryComponent,
+    DetailproComponent,
+    CaterightComponent,
+    CateleftComponent,
+    
     
   ],
   imports: [
@@ -29,7 +43,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
