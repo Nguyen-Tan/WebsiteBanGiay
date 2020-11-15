@@ -3,18 +3,14 @@ import { NgModule } from '@angular/core';
 import { ApiService } from 'src/app/lib/api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NewsComponent } from './news/news.component';
-import { SlideComponent } from './slide/slide.component';
-import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './product/header/header.component';
+import { FooterComponent } from './product/footer/footer.component';
+import { MainComponent } from './product/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CartComponent } from './cart/cart.component';
-import { CateogoryComponent } from './product/cateogory/catemain/cateogory.component';
-import { DetailproComponent } from './detailpro/detailpro.component';
-import { CaterightComponent } from './product/cateogory/cateright/cateright.component';
-import { CateleftComponent } from './product/cateogory/cateleft/cateleft.component';
+
+import { CategoryComponent } from './product/category/category.component';
+import { DetailComponent } from './product/detail/detail.component';
 
 
 
@@ -27,14 +23,9 @@ import { CateleftComponent } from './product/cateogory/cateleft/cateleft.compone
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NewsComponent,
-    SlideComponent,
     MainComponent,
-    CartComponent,
-    CateogoryComponent,
-    DetailproComponent,
-    CaterightComponent,
-    CateleftComponent,
+    CategoryComponent,
+    DetailComponent,
     
     
   ],
