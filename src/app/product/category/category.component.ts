@@ -13,6 +13,7 @@ import { takeUntil } from 'rxjs/operators';
 export class CategoryComponent extends BaseComponent implements OnInit {
 
   public CateogoryList: any=[];
+  public BrandList:any=[];
   public ProductByCategory: any=[];
   
   
@@ -22,6 +23,7 @@ export class CategoryComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.refserProList();
+    this.refserBrandList();
     this.refserProListbyCate();
     
   }
@@ -44,7 +46,12 @@ export class CategoryComponent extends BaseComponent implements OnInit {
     })
   }
   
-
+  refserBrandList(){
+    this.service.get("/api/Brand/get-all").subscribe(data=>{
+      this.BrandList = data;
+     
+    })
+  }
   
 }
   

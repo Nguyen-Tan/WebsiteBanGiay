@@ -36,6 +36,10 @@ export class ProductbycatComponent extends BaseComponent implements OnInit  {
     });
   });
   }
+  addToCart(item) { 
+    this._cart.addToCart(item);
+    alert('Thêm thành công!'); 
+  }
 
   
 }

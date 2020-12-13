@@ -13,11 +13,8 @@
         <div class="brands_products"><!--brands_products-->
             <h2>Thương hiệu</h2>
             <div class="brands-name">
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"> <span class="pull-right">(50)</span>Hội nhà văn</a></li>
-                    <li><a href="#"> <span class="pull-right">(56)</span>Kim đồng</a></li>
-                    <li><a href="#"> <span class="pull-right">(27)</span>Thanh niên</a></li>
-                    
+                <ul *ngFor="let item of BrandList" class="nav nav-pills nav-stacked">
+                    <li><a [routerLink]="['/brand',item.id_brand]"> <span class="pull-right"></span>{{item.name}}</a></li>
                 </ul>
             </div>
         </div><!--/brands_products-->
@@ -31,7 +28,7 @@
         </div><!--/price-range-->
         
         <div class="shipping text-center"><!--shipping-->
-            <img src="images/home/shipping.jpg" alt="" />
+            <img src="assets/img/shipping.jpg" alt="" />
         </div><!--/shipping-->
     
     </div>

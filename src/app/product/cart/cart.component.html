@@ -1,0 +1,123 @@
+<app-header></app-header>
+<section id="cart_items">
+    <div class="container">
+        <div class="review-payment">
+            <h2>Xem xét và thanh toán</h2>
+        </div>
+
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Hình ảnh</td>
+                        <td class="description">Sản phẩm</td>
+                        <td class="price">Giá</td>
+                        <td class="quantity">Số lượng</td>
+                        <td class="total">Thành tiền</td>
+                        <td>Thao tác</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of items">
+                        <td class="cart_product" style="margin-right: 30px;">
+                            <a href=""><img width="120px"  src="{{c.image}}"  ></a>
+                        </td>
+                        <td class="cart_description" >
+                            <h2><a href="" style="font-size:20px ;">{{c.namepro}}</a></h2>
+                            <!-- <p>{{c.id_pro}}</p> -->
+                        </td>
+                        <td class="cart_price">
+                            <p>{{(c.price | currency: " ").replace('.00',' ')}} </p>
+                        </td>
+                        <td class="product_quantity"> <input #inp  min="1" max="100" (change)="addQty(c,inp.value)" [value]="c.quantity" type="number"></td>
+                        <td class="cart_total">
+                            <p class="cart_total_price">{{(c.money | currency: " ").replace('.00',' ')}}</p>
+                        </td>
+                        <td class="cart_delete"><a class="cart_quantity_delete" (click)="_cart.deleteItem(c.id_pro)"><i class="fa fa-times"></i></a></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="payment-options">
+                <span>
+                    <label><input type="checkbox"> Direct Bank Transfer</label>
+                </span>
+                <span>
+                    <label><input type="checkbox"> Check Payment</label>
+                </span>
+                <span>
+                    <label><input type="checkbox"> Paypal</label>
+                </span>
+        </div> -->
+    </div>
+</section> <!--/#cart_items-->
+<section id="do_action">
+    <div class="container">
+        <div class="heading">
+            <h3>Bạn muốn làm gì tiếp theo?</h3>
+            <p>Chọn xem bạn có mã giảm giá hoặc điểm thưởng muốn sử dụng hoặc muốn ước tính chi phí giao hàng của mình.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="chose_area">
+                    <ul class="user_option">
+                        <li>
+                            <input type="checkbox">
+                            <label>Sử dụng mã giảm giá</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Sử dụng phiếu quà tặng</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Ước tính giao hàng & Taxi</label>
+                        </li>
+                    </ul>
+                    <ul class="user_info">
+                        <li class="single_field">
+                            <label>Tỉnh:</label>
+                            <select>
+                                <option>Hà Nội</option>
+                                <option>Hải Dương</option>
+                                <option>Quảng Ninh</option>
+                                <option>Hải Phòng</option>
+                                <option>TP.Hồ Chí Minh</option>
+                                
+                            </select>
+                            
+                        </li>
+                        <li class="single_field">
+                            <label>Huyện / Thành phố:</label>
+                            <select>
+                                <option>Cẩm Giàng</option>
+                                
+                            </select>
+                        
+                        </li>
+                        <li class="single_field zip-field">
+                            <label>Mã Bưu Chính:</label>
+                            <input type="text">
+                        </li>
+                    </ul>
+                    <a class="btn btn-default update" href="">Thông điệp</a>
+                    <a class="btn btn-default check_out" href="">Tiếp tục</a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="total_area">
+                    <ul>
+                        <li>Tổng giỏ hàng <span>{{total}}</span></li>
+                        <li>Thuế  <span>2000đ</span></li>
+                        <li>Chi phí giao hàng <span>Miễn phí</span></li>
+                        <li>Hóa đơn <span>{{total}}</span></li>
+                    </ul>
+                        <a class="btn btn-default update" href="">Giao hàng</a>
+                        <a class="btn btn-default check_out" href="">Kiểm tra</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
+<app-footer></app-footer>

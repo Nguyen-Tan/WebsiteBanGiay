@@ -5,6 +5,8 @@ import { FormBuilder} from '@angular/forms';
 import { BaseComponent } from 'src/app/lib/base-component';
 import{ Router} from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
+
+
 //import 'rxjs/add/operator/takeUntil';
 
 @Component({
@@ -16,7 +18,7 @@ export class MainComponent extends BaseComponent implements OnInit {
 
   //constructor(private service:SharedService) { }
 
-  public ProductList: any=[];
+  public ProductSell: any=[];
   
  
   //@ViewChild(FileUpload, { static: false }) file_image: FileUpload;
@@ -25,14 +27,18 @@ export class MainComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.refserProList();
+    this.refserProSell();
     
   }
   
-  refserProList(){
-    this.service.get("/api/Product/get-all").subscribe(data=>{
-      this.ProductList = data;
+  refserProSell(){
+    this.service.get("/api/Product/get-pro-sell").subscribe(data=>{
+      this.ProductSell = data;
       //console.log(this.ProductList);
     })
+  }
+  addToCart(item) { 
+    this._cart.addToCart(item);
+    alert('Thêm thành công!'); 
   }
 }

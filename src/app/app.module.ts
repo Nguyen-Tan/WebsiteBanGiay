@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './product/category/category.component';
 import { DetailComponent } from './product/detail/detail.component';
 import { ProductbycatComponent } from './product/productbycat/productbycat.component';
+import { BrandComponent } from './product/brand/brand.component';
+import { CartComponent } from './product/cart/cart.component';
 
 
 
@@ -28,6 +30,8 @@ import { ProductbycatComponent } from './product/productbycat/productbycat.compo
     CategoryComponent,
     DetailComponent,
     ProductbycatComponent,
+    BrandComponent,
+    CartComponent,
     
     
   ],

@@ -1,46 +1,123 @@
 <app-header></app-header>
+<section id="slider"><!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+                    
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>NPT</span>-SHOPPER</h1>
+                                <h2>Lựa Chọn Theo Sở Thích</h2>
+                                <p style="font-weight: bold;">Tư vấn mua hàng</p>
+                                <p style="font-weight: bold; color: lightsalmon;">Lựa chọn theo phong cách của bạn</p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="assets/img/banner/1b8937d36c1a2a6a3af3cfb1.jpg" class="girl img-responsive" alt="" />
+                                <!-- <img src="assets/img/product/p1.jpg"  class="pricing" alt="" /> -->
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>NPT</span>-SHOPPER</h1>
+                                <h2>Giao Hàng Miễn Phí</h2>
+                                <p style="font-weight: bold;">Giao hàng nhanh và chính xác</p>
+                                <p style="font-weight: bold; color: lightsalmon;">Thanh toán khi nhận hàng</p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="assets/img/banner/f3891b2b037f41b8a4277b484fcbedad.jpg" class="girl img-responsive" alt="" />
+                                <!-- <img src="assets/img/banner/chup-anh-quang-cao-san-pham-giay-03"  class="pricing" alt="" /> -->
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>NPT</span>-SHOPPER</h1>
+                                <h2>Ưu Đãi Ngập Tràn</h2>
+                                <p style="font-weight: bold;">Ưu đãi hàng tuần</p>
+                                <p style="font-weight: bold; color: lightsalmon;">Big sale mỗi tháng</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="assets/img/banner/OIP.jfif" class="girl img-responsive" alt="" />
+                                <!-- <img src="assets/img/banner/chup-anh-quang-cao-san-pham-giay-03" class="pricing" alt="" /> -->
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
 <section>
     <div class="container">
     <div class="row">
         <app-category></app-category>
         <div class="col-sm-9 padding-right">
             <div class="features_items"><!--features_items-->
+                
                 <h2 class="title text-center">Sản phẩm bán chạy</h2>
-                <div *ngFor="let item of ProductList" class="col-sm-4">
+                <div *ngFor="let item of ProductSell" class="col-sm-4">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img [routerLink]="['/detail',item.id_pro]" src="{{item.image}}" alt="" />
+                                    <!-- <h2>{{item.price}}</h2> -->
+                                    <div>
+                                        <div *ngIf="item.price=='0'">
+                                            <span >{{item.price}}</span>
+                                        </div>
+                                        <div *ngElse>
+                                            <span >{{item.price}}</span><span>{{item.promotionprice}}</span>
+                                        </div>
+                                    </div>
+                                    <p>{{item.namepro}}</p>
+                                    <a [routerLink]="['/home']" (click)="addToCart(item)" title="Add to cart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                </div>                             
+                        </div>
+                        <div class="choose">
+                            <ul class="nav nav-pills nav-justified">  
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="title text-center">Sản phẩm khuyến mại</h2>
+                <div *ngFor="let item of ProductSell" class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img [routerLink]="['/detail',item.id_pro]" src="{{item.image}}" alt="" />
                                     <h2>{{item.price}}</h2>
                                     <p>{{item.namepro}}</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                </div>
-                                <!-- <div class="product-overlay">
-                                    <div class="overlay-content">
-                                        <h2>Giá </h2>
-                                        <p>Tên sản phẩm</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                    </div>
-                                </div> -->
+                                    <a [routerLink]="['/home']" (click)="addToCart(item)" title="Add to cart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                </div>                             
                         </div>
                         <div class="choose">
-                            <ul class="nav nav-pills nav-justified">
-                                
-                                
+                            <ul class="nav nav-pills nav-justified">  
                             </ul>
                         </div>
                     </div>
                 </div>
-                
-                
             </div><!--features_items-->
-            
-            
-            
-            
-            
-        </div>
+        </div> 
     </div>
 </div>
 </section>
+<app-footer></app-footer>
    

@@ -15,6 +15,7 @@ export class DetailComponent extends BaseComponent implements OnInit {
 
   public ProductDetail:any;
   
+  
 
 
   //@ViewChild(FileUpload, { static: false }) file_image: FileUpload;
@@ -38,6 +39,11 @@ export class DetailComponent extends BaseComponent implements OnInit {
       });
     });
   }
- 
+  addToCart(ProductDetai) { 
+    this._cart.addToCart(ProductDetai);
+    alert('Thêm thành công!'); 
+  }
+  
+  
 
 }
